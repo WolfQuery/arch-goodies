@@ -11,6 +11,7 @@ Wallpapers used in this theme are created by the artist [diinki](https://github.
 ## Fonts
 
 Fonts used in this theme are created by [subframe7536](https://github.com/subframe7536)
+
 📁 Source: [Maple Mono](https://github.com/subframe7536/maple-font)
 
 🙏 Please **do not redistribute**. Instead, download them directly from the repo.
