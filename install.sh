@@ -2,7 +2,7 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lighdm-gtk htop picom
 
 echo "Installing i3 config and assets..."
 
@@ -13,6 +13,7 @@ mkdir -p ~/.config/kitty
 mkdir -p ~/.config/rofi
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/Pictures/wallpapers
+mkdir -p /etc/lightdm
 
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
@@ -20,6 +21,8 @@ cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
 cp -r config/rofi/* ~/.config/rofi/
 cp config/Xresources/* ~/.Xresources
+sudo cp config/lightdm/* /etc/lightdm/
+sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
 
 # Copy wallpapers
 echo "Downloading wallpapers..."
@@ -45,6 +48,13 @@ cd ~/Downloads/
 git clone https://github.com/meskarune/i3lock-fancy.git
 cd i3lock-fancy
 sudo make install
+
+# Install and setup login manager lightdm
+echo "Installing and configuring LightDM..."
+sudo systemctl enable lightdm.service
+sudo systemctl start lightdm.service
+
+
 
 echo "Initializing cleanup..."
 # Cleanup

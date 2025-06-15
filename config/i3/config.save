@@ -28,7 +28,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -40,11 +40,8 @@ exec --no-startup-id -merge ~/.Xresources
 # automatically call feh to set the background wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png
 
-# automatically start picom on startup
-exec --no-startup-id picom --config ~/.config/picom.conf
-
 # automatically start xautolock to lock the screen after 3 minutes of inactivity
-#exec --no-startup-id xautolock -time 3 -locker "i3lock-fancy"
+exec --no-startup-id xautolock -time 3 -locker "i3lock-fancy"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -60,7 +57,7 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # lock the screen
-bindsym $mod+Control+l exec --no-startup-id i3lock-fancy
+bindsym $mod+Shift+l exec --no-startup-id i3lock-fancy
 
 # open rofi as app launcher
 bindsym $mod+m exec rofi -show run
@@ -217,8 +214,8 @@ client.background       #FFFFFF
 bar {
   colors {
     background #000000
-    statusline #b12cbf
-    separator  #500096
+    statusline #FFFFFF
+    separator  #666666
 
     focused_workspace  #83CAFA #51A2DA #FFFFFF
     active_workspace   #3C6EB4 #294172 #FFFFFF
@@ -227,7 +224,6 @@ bar {
     binding_mode       #b691d3 #A07CBC #FFFFFF
   }
   status_command i3status
-  position top
 }
 
 
