@@ -2,7 +2,7 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch
 
 echo "Installing i3 config and assets..."
 
