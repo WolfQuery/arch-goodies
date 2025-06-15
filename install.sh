@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 set -e
+# install dependencies
+echo "Installing dependencies..."
+sudo dnf install -y kitty rofi feh git curl unzip
 
 echo "Installing i3 config and assets..."
 
@@ -12,13 +15,19 @@ mkdir -p ~/Pictures/wallpapers
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
 cp -r config/kitty/* ~/.config/kitty/
-cp config/Xresources ~/.Xresources
+cp config/Xresources/* ~/.Xresources
 
 # Copy wallpapers
-cp -r config/wallpapers/* ~/Pictures/wallpapers/
+echo "Downloading wallpapers..."
+cd  ~/Pictures/wallpapers
+git clone https://github.com/diinki/wallpapers.git
 
 # Copy fonts
-cp -r config/fonts/* ~/.local/share/fonts/
+echo "Installing fonts..."
+cd ~/Downloads/
+curl -L -o MapleMonoNL-TTF.zip https://github.com/subframe7536/maple-font/releases/download/v7.3/MapleMonoNL-TTF.zip
+unzip MapleMonoNL-TTF.zip -d MapleMonoNL-TTF
+mv MapleMonoNL-TTF  ~/.local/share/fonts
 
 # Refresh font cache
 fc-cache -fv
@@ -26,5 +35,28 @@ fc-cache -fv
 # Merge Xresources
 xrdb -merge ~/.Xresources
 
+echo "Initializing cleanup..."
+# Cleanup
+rm -rf ~/Downloads/MapleMonoNL-TTF.zip
+rm -rf ~/Downloads/MapleMonoNL-TTF
+
+
 echo "Installation complete! Reload i3 to apply changes."
 
+while true; do
+    read -rp "Do you want to reboot now to apply all changes? (y/n): " yn
+    case $yn in
+        [Yy]* )
+            echo "Rebooting..."
+            sudo reboot
+            break
+            ;;
+        [Nn]* )
+            echo "Reboot canceled. Remember to reboot later for all changes to take effect."
+            break
+            ;;
+        * )
+            echo "Please answer y (yes) or n (no)."
+            ;;
+    esac
+done
