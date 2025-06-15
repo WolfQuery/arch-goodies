@@ -2,7 +2,7 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock
 
 echo "Installing i3 config and assets..."
 
@@ -35,11 +35,18 @@ fc-cache -fv
 # Merge Xresources
 xrdb -merge ~/.Xresources
 
+# Install lock screen script
+echo "Installing lock screen script..."
+cd ~/Downloads/
+git clone https://github.com/meskarune/i3lock-fancy.git
+cd i3lock-fancy
+sudo make install
+
 echo "Initializing cleanup..."
 # Cleanup
 rm -rf ~/Downloads/MapleMonoNL-TTF.zip
 rm -rf ~/Downloads/MapleMonoNL-TTF
-
+rm -rf ~/Downloads/i3lock-fancy
 
 echo "Installation complete! Reload i3 to apply changes."
 
