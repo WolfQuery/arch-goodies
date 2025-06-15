@@ -2,18 +2,20 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst
 
 echo "Installing i3 config and assets..."
 
 # Create config directories
 mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3status
 mkdir -p ~/.config/kitty
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/Pictures/wallpapers
 
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
+cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
 cp config/Xresources/* ~/.Xresources
 
