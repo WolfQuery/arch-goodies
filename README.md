@@ -1,6 +1,16 @@
 # My dots for i3 Fedora 42
 
-## Wallpapers
+## Installation
+To Install simply open a terminal and run the following command: (you will be asked for your password to install any missing dependencies)
+```
+git clone https://codeberg.org/WolfQuery/my-i3-dots-Fedora-42.git
+cd my-i3-dots-Fedora-42
+chmod +x install.sh
+./install.sh
+```
+
+## Credits
+### Wallpapers
 
 Wallpapers used in this theme are created by the artist [diinki](https://github.com/diinki).
 
@@ -8,7 +18,7 @@ Wallpapers used in this theme are created by the artist [diinki](https://github.
 
 🙏 Please **do not redistribute**. Instead, download them directly from the artist's repo, and consider supporting them on [Ko-fi](https://ko-fi.com/E1E81FQW4S).
 
-## Fonts
+### Fonts
 
 Fonts used in this theme are created by [subframe7536](https://github.com/subframe7536)
 
