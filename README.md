@@ -2,7 +2,7 @@
 
 ## Wallpapers
 
-Wallpapers used in this theme are created by the artist at [diinki](https://github.com/diinki).
+Wallpapers used in this theme are created by the artist [diinki](https://github.com/diinki).
 
 📁 Source: [wallpapers](https://github.com/diinki/wallpapers)
 
