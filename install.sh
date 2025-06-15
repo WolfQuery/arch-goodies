@@ -10,6 +10,7 @@ echo "Installing i3 config and assets..."
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
 mkdir -p ~/.config/kitty
+mkdir -p ~/.config/rofi
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/Pictures/wallpapers
 
@@ -17,6 +18,7 @@ mkdir -p ~/Pictures/wallpapers
 cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
+cp -r config/rofi/* ~/.config/rofi/
 cp config/Xresources/* ~/.Xresources
 
 # Copy wallpapers
