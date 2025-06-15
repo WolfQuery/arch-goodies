@@ -14,6 +14,7 @@ mkdir -p ~/.config/rofi
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/Pictures/wallpapers
 mkdir -p /etc/lightdm
+mkdir -p ~/.config/picom
 
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
@@ -23,6 +24,7 @@ cp -r config/rofi/* ~/.config/rofi/
 cp config/Xresources/* ~/.Xresources
 sudo cp config/lightdm/* /etc/lightdm/
 sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
+cp config/picom/* ~/.config/picom/
 
 # Copy wallpapers
 echo "Downloading wallpapers..."
