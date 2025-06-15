@@ -25,3 +25,11 @@ Fonts used in this theme are created by [subframe7536](https://github.com/subfra
 📁 Source: [Maple Mono](https://github.com/subframe7536/maple-font)
 
 🙏 Please **do not redistribute**. Instead, download them directly from the repo.
+
+### Lockscreen
+
+Lockscreen script used in this theme is created by [meskaurne](https://github.com/meskarune)
+
+📁 Source: [i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
+
+🙏 Please **do not redistribute**. Instead, download them directly from the repo.
