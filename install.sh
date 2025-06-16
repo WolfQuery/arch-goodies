@@ -2,38 +2,37 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom make
 
 echo "Installing i3 config and assets..."
 
 # Create config directories
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3status
-mkdir -p ~/.config/kitty
-mkdir -p ~/.config/rofi
-mkdir -p ~/.local/share/fonts
-mkdir -p ~/Pictures/wallpapers
-mkdir -p /etc/lightdm
-mkdir -p ~/.config/picom
-mkdir -p ~/.Xresources
+mkdir -p ~/.config/i3/
+mkdir -p ~/.config/i3status/
+mkdir -p ~/.config/kitty/
+mkdir -p ~/.config/rofi/
+mkdir -p ~/.local/share/fonts/
+mkdir -p ~/Pictures/wallpapers/
+mkdir -p /etc/lightdm/
+mkdir -p ~/.config/picom/
+mkdir -p ~/.Xresources/
 
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
 cp -r config/rofi/* ~/.config/rofi/
-cp -r config/Xresources/* ~/.Xresources
+cp -r config/Xresources/.Xresources ~/.Xresources
 sudo cp config/lightdm/* /etc/lightdm/
-# sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
 cp config/picom/* ~/.config/picom/
-# copy light dm wallpaper
-# sudo cp /home/mun/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
+
 
 # Copy wallpapers
 echo "Downloading wallpapers..."
-cd  ~/Pictures/wallpapers
+cd  ~/Pictures/
 git clone https://github.com/diinki/wallpapers.git
-sudo cp /may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
+sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
+
 # Copy fonts
 echo "Installing fonts..."
 cd ~/Downloads/
