@@ -33,7 +33,7 @@ mv MapleMonoNL-TTF  ~/.local/share/fonts
 fc-cache -fv
 
 # Merge Xresources
-xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresources°/.Xresource
 
 # Install lock screen script
 echo "Installing lock screen script..."
