@@ -11,7 +11,7 @@ cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
 cp -r config/rofi/* ~/.config/rofi/
-cp -r config/Xresources/.Xresources ~/.Xresources
+cp -r config/Xresources/ ~/.Xresources
 sudo cp config/lightdm/* /etc/lightdm/
 cp config/picom/* ~/.config/picom/
 
