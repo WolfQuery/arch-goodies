@@ -6,17 +6,6 @@ sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfet
 
 echo "Installing i3 config and assets..."
 
-# Create config directories
-mkdir -p ~/.config/i3/
-mkdir -p ~/.config/i3status/
-mkdir -p ~/.config/kitty/
-mkdir -p ~/.config/rofi/
-mkdir -p ~/.local/share/fonts/
-mkdir -p ~/Pictures/wallpapers/
-mkdir -p /etc/lightdm/
-mkdir -p ~/.config/picom/
-mkdir -p ~/.Xresources/
-
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
