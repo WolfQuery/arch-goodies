@@ -23,8 +23,10 @@ cp -r config/kitty/* ~/.config/kitty/
 cp -r config/rofi/* ~/.config/rofi/
 cp config/Xresources/* ~/.Xresources
 sudo cp config/lightdm/* /etc/lightdm/
-sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
+# sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
 cp config/picom/* ~/.config/picom/
+# copy light dm wallpaper
+sudo cp /home/mun/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
 
 # Copy wallpapers
 echo "Downloading wallpapers..."
