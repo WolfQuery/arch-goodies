@@ -5,6 +5,7 @@ git pull origin main
  
  sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom make pip spotdl ffmpeg firefox 
 
+
  echo "Updating configs"
 cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
