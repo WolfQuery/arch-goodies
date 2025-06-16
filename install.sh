@@ -2,7 +2,7 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom make pip spotdl ffmpeg firefox 
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom make pip ffmpeg firefox 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing i3 config and assets..."
