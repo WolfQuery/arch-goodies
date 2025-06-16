@@ -21,7 +21,7 @@ cp -r config/i3/* ~/.config/i3/
 cp -r config/i3status/* ~/.config/i3status/
 cp -r config/kitty/* ~/.config/kitty/
 cp -r config/rofi/* ~/.config/rofi/
-cp config/Xresources/* ~/.Xresources
+cp -r config/Xresources/* ~/.Xresources
 sudo cp config/lightdm/* /etc/lightdm/
 # sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
 cp config/picom/* ~/.config/picom/
