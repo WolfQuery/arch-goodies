@@ -2,7 +2,7 @@
 set -e
 # install dependencies
 echo "Installing dependencies..."
-sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lighdm-gtk htop picom
+sudo dnf install -y kitty rofi feh git curl unzip i3lock xautolock dunst fastfetch lightdm lightdm-gtk htop picom
 
 echo "Installing i3 config and assets..."
 
