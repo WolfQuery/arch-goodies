@@ -15,6 +15,7 @@ mkdir -p ~/.local/share/fonts
 mkdir -p ~/Pictures/wallpapers
 mkdir -p /etc/lightdm
 mkdir -p ~/.config/picom
+mkdir -p ~/.Xresources
 
 # Copy configs
 cp -r config/i3/* ~/.config/i3/
