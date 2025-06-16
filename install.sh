@@ -27,13 +27,13 @@ sudo cp config/lightdm/* /etc/lightdm/
 # sudo cp ~/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /etc/lightdm/wallpaper.png
 cp config/picom/* ~/.config/picom/
 # copy light dm wallpaper
-sudo cp /home/mun/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
+# sudo cp /home/mun/Pictures/wallpapers/may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
 
 # Copy wallpapers
 echo "Downloading wallpapers..."
 cd  ~/Pictures/wallpapers
 git clone https://github.com/diinki/wallpapers.git
-
+sudo cp /may2025/STRAY_KITTY_CLUB-pink.png /usr/share/pixmaps/wallpaper.png
 # Copy fonts
 echo "Installing fonts..."
 cd ~/Downloads/
