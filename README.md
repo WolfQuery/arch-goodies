@@ -1,35 +1,5 @@
-# My dots for i3 Fedora 42
+# My dots for i3 Arch
 
-
-## Requirements
-*Should be installed automatically via the install.sh0*
-
-- i3
-- i3lock-fancy
-- picom
-- rofi
-- kitty
-- polybar
-- eww
-- fastfetch
-- musikcube
-- brew
-- cava
-- blueman
-- feh
-- dunst
-- lxappearance
-- btop
-- nano
-- git
-- lazygit
-- vscodium
-- python 3
-- gimp
-- krita
-- thunar
-- clipman
-- obsidian
 
 ## Installation
 To Install simply open a terminal and run the following command: (you will be asked for your password to install any missing dependencies)
