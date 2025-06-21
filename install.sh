@@ -1,7 +1,9 @@
+#!/bin/bash
+
 echo "beginning installation"
 
 echo "installing dependencies" 
-sudo pacman -S rofi kitty picom i3blocks eww git unzip fastfetch nano htop nano vscodium cava feh blueman clipman thunar dunst
+sudo pacman -S rofi kitty picom i3blocks eww git unzip fastfetch nano htop vscodium cava feh blueman clipman thunar dunst --needed --noconfirm
 
 echo "creating configuration directories"
 mkdir -p ~/.config/i3/
