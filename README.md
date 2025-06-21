@@ -5,7 +5,7 @@
 To Install simply open a terminal and run the following command: (you will be asked for your password to install any missing dependencies)
 ```
 git clone https://codeberg.org/WolfQuery/my-i3-dots-Fedora-42.git
-cd my-i3-dots-Fedora-42
+cd my-i3-dots-Arch
 chmod +x install.sh
 ./install.sh
 ```
