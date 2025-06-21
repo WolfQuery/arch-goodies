@@ -1,0 +1,31 @@
+# i3blocks config
+
+# Set global properties
+separator=true
+markup=none
+
+[time]
+command=date '+%H:%M:%S'
+interval=1
+color=#EADAEA
+
+[date]
+command=date '+%a %d %b %Y'
+interval=60
+color=#EADAEA
+
+[battery]
+command=acpi | cut -d, -f2-
+interval=30
+color=#D2FABE
+
+[wifi]
+command=iwgetid -r
+interval=10
+color=#ABE2FB
+
+[mem]
+command=free -h | awk '/^Mem:/ {print $3 "/" $2}'
+interval=10
+color=#FFC9E3
+
