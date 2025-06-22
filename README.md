@@ -39,6 +39,7 @@ chmod +x install.sh
 
 ## 🖼️ Screenshots
 ![cava](meta/cava.png)
+![vscodium](meta/vscodium.png)
 ---
 
 ## 🙏 Credits
