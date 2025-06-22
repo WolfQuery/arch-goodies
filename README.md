@@ -50,14 +50,14 @@ chmod +x install.sh
 ### 🎨 Wallpapers
 
 Wallpapers used in this theme are created by the artist [diinki](https://github.com/diinki).
-📁 Repo: [wallpapers](https://github.com/diinki/wallpapers)
+📁 Repo: [`wallpapers`](https://github.com/diinki/wallpapers)
 💡 Please **do not redistribute** — download them directly and consider supporting the artist on [Ko-fi](https://ko-fi.com/E1E81FQW4S).
 
 ---
 
 ### 🔤 Fonts
 
-Font used is [Maple Mono NL](https://github.com/subframe7536/maple-font) by [subframe7536](https://github.com/subframe7536).
+Font used is [`Maple Mono NL`](https://github.com/subframe7536/maple-font) by [subframe7536](https://github.com/subframe7536).
 💡 Please **do not redistribute** — download directly from the original source.
 
 ---
