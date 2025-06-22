@@ -38,11 +38,7 @@ chmod +x install.sh
 ---
 
 ## 🖼️ Screenshots
-
-<!-- Add screenshots here if you plan to include them -->
-
-<!-- ![screenshot](screenshots/desktop.png) -->
-
+![cava](meta/cava.png)
 ---
 
 ## 🙏 Credits
