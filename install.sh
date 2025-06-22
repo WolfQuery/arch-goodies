@@ -5,6 +5,15 @@ set -e  # Exit on error
 echo "==> Beginning i3 rice installation"
 
 # ----------------------------------------
+# SYSTEM PACKAGES (Pacman only)
+# ----------------------------------------
+echo "==> Installing system packages (pacman)..."
+sudo pacman -Syu --needed --noconfirm \
+  rofi kitty picom i3blocks git unzip fastfetch nano htop \
+  cava feh blueman thunar dunst make base-devel
+
+
+# ----------------------------------------
 # AUR HELPER (yay)
 # ----------------------------------------
 echo "==> Installing yay (AUR helper)..."
@@ -18,12 +27,11 @@ else
 fi
 
 # ----------------------------------------
-# SYSTEM DEPENDENCIES
+# AUR PACKAGES (yay)
 # ----------------------------------------
-echo "==> Installing system packages..."
-sudo pacman -Syu --needed --noconfirm \
-  rofi kitty picom i3blocks eww git unzip fastfetch nano htop \
-  vscodium cava feh blueman clipman thunar dunst make base-devel
+echo "==> Installing AUR packages (yay)..."
+yay -S --needed --noconfirm \
+  clipman eww vscodium i3lock-fancy
 
 # ----------------------------------------
 # KEYBOARD LAYOUT
@@ -79,11 +87,5 @@ curl -LO https://github.com/subframe7536/maple-font/releases/download/v7.3/Maple
 unzip -o MapleMonoNL-TTF.zip -d MapleMonoNL-TTF
 cp MapleMonoNL-TTF/*.ttf ~/.local/share/fonts/
 fc-cache -fv
-
-# ----------------------------------------
-# i3lock-fancy (AUR)
-# ----------------------------------------
-echo "==> Installing i3lock-fancy from AUR..."
-yay -S --noconfirm i3lock-fancy
 
 echo "✅ Installation complete. You may want to reboot now!"
