@@ -1,19 +1,44 @@
 #!/bin/bash
 
-echo "beginning installation"
+set -e  # Exit on error
 
-echo "installing dependencies" 
-sudo pacman -S rofi kitty picom i3blocks eww git unzip fastfetch nano htop vscodium cava feh blueman clipman thunar dunst make base-devel --needed --noconfirm
+echo "==> Beginning i3 rice installation"
 
-echo "creating configuration directories"
-mkdir -p ~/.config/i3/
-mkdir -p ~/.config/kitty/
-mkdir -p ~/.config/rofi/
-mkdir -p ~/.config/picom/
-mkdir -p ~/.config/i3blocks/
-mkdir -p ~/.config/eww/
+# ----------------------------------------
+# AUR HELPER (yay)
+# ----------------------------------------
+echo "==> Installing yay (AUR helper)..."
+cd ~/Downloads/
+if ! command -v yay &> /dev/null; then
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si --noconfirm
+else
+  echo "yay already installed. Skipping."
+fi
 
-echo "copying config files to target directories"
+# ----------------------------------------
+# SYSTEM DEPENDENCIES
+# ----------------------------------------
+echo "==> Installing system packages..."
+sudo pacman -Syu --needed --noconfirm \
+  rofi kitty picom i3blocks eww git unzip fastfetch nano htop \
+  vscodium cava feh blueman clipman thunar dunst make base-devel
+
+# ----------------------------------------
+# KEYBOARD LAYOUT
+# ----------------------------------------
+echo "==> Setting system keyboard layout (Czech QWERTZ)..."
+sudo localectl set-keymap cz-qwertz
+sudo localectl set-x11-keymap cz qwertz
+
+# ----------------------------------------
+# CONFIG FILES
+# ----------------------------------------
+echo "==> Creating configuration directories..."
+mkdir -p ~/.config/{i3,kitty,rofi,picom,i3blocks,eww}
+
+echo "==> Copying config files..."
 cp -rf config/i3/* ~/.config/i3/
 cp -rf config/i3blocks/* ~/.config/i3blocks/
 cp -rf config/kitty/* ~/.config/kitty/
@@ -21,33 +46,44 @@ cp -rf config/picom/* ~/.config/picom/
 cp -rf config/rofi/* ~/.config/rofi/
 cp -rf config/eww/* ~/.config/eww/
 
-echo "downloading wallpapers"
+# ----------------------------------------
+# XRESOURCES SETUP
+# ----------------------------------------
+echo "==> Setting up .Xresources autoload..."
+if ! grep -Fxq "xrdb -merge ~/.Xresources" ~/.xinitrc 2>/dev/null; then
+  echo "xrdb -merge ~/.Xresources" >> ~/.xinitrc
+  echo "Added xrdb loading to .xinitrc"
+else
+  echo ".Xresources already set in .xinitrc"
+fi
+
+# ----------------------------------------
+# WALLPAPERS
+# ----------------------------------------
+echo "==> Downloading wallpapers..."
 mkdir -p ~/Pictures/
 cd ~/Pictures/
-git clone https://github.com/diinki/wallpapers.git
+if [ ! -d "wallpapers" ]; then
+  git clone https://github.com/diinki/wallpapers.git
+else
+  echo "Wallpapers already cloned. Skipping."
+fi
 
-echo "installing the maple mono nl font"
-
-mkdir -p ~/Downloads/
-mkdir -p ~/.local/share/fonts
+# ----------------------------------------
+# FONTS
+# ----------------------------------------
+echo "==> Installing Maple Mono NL font..."
 cd ~/Downloads/
+mkdir -p ~/.local/share/fonts
 curl -LO https://github.com/subframe7536/maple-font/releases/download/v7.3/MapleMonoNL-TTF.zip
-unzip MapleMonoNL-TTF.zip -d MapleMonoNL-TTF
-cp MapleMonoNL-TTF ~/.local/share/fonts/
-
-echo "updating font cache"
+unzip -o MapleMonoNL-TTF.zip -d MapleMonoNL-TTF
+cp MapleMonoNL-TTF/*.ttf ~/.local/share/fonts/
 fc-cache -fv
 
-echo "installing i3lock-fancy"
-#cd ~/Downloads/
-#git clone https://github.com/meskarune/i3lock-fancy.git
-#cd i3lock-fancy
-#sudo make install
+# ----------------------------------------
+# i3lock-fancy (AUR)
+# ----------------------------------------
+echo "==> Installing i3lock-fancy from AUR..."
+yay -S --noconfirm i3lock-fancy
 
-cd ~/Downloads/
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-yay -S i3lock-fancy
-
+echo "✅ Installation complete. You may want to reboot now!"
