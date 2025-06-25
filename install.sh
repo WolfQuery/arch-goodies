@@ -17,6 +17,7 @@ sudo pacman -Syu --needed --noconfirm \
 # AUR HELPER (yay)
 # ----------------------------------------
 echo "==> Installing yay (AUR helper)..."
+mkdir -p ~/Downloads/
 cd ~/Downloads/
 if ! command -v yay &> /dev/null; then
   git clone https://aur.archlinux.org/yay.git
