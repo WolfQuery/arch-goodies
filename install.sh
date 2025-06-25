@@ -2,7 +2,7 @@
 
 set -e  # Exit on error
 
-echo "==> Beginning i3 rice installation"
+echo "==========> Beginning i3 rice installation"
 
 # ----------------------------------------
 # SYSTEM PACKAGES (Pacman only)
@@ -16,7 +16,7 @@ sudo pacman -Syu --needed --noconfirm \
 # ----------------------------------------
 # AUR HELPER (yay)
 # ----------------------------------------
-echo "==> Installing yay (AUR helper)..."
+echo "==========> Installing yay (AUR helper)..."
 mkdir -p ~/Downloads/
 cd ~/Downloads/
 if ! command -v yay &> /dev/null; then
@@ -30,24 +30,24 @@ fi
 # ----------------------------------------
 # AUR PACKAGES (yay)
 # ----------------------------------------
-echo "==> Installing AUR packages (yay)..."
+echo "==========> Installing AUR packages (yay)..."
 yay -S --needed --noconfirm \
-  clipman eww vscodium i3lock-fancy
+  clipman i3lock-fancy eww
 
 # ----------------------------------------
 # KEYBOARD LAYOUT
 # ----------------------------------------
-echo "==> Setting system keyboard layout (Czech QWERTZ)..."
+echo "==========> Setting system keyboard layout (Czech QWERTZ)..."
 sudo localectl set-keymap cz-qwertz
 sudo localectl set-x11-keymap cz qwertz
 
 # ----------------------------------------
 # CONFIG FILES
 # ----------------------------------------
-echo "==> Creating configuration directories..."
+echo "==========> Creating configuration directories..."
 mkdir -p ~/.config/{i3,kitty,rofi,picom,i3blocks,eww}
 
-echo "==> Copying config files..."
+echo "==========> Copying config files..."
 cp -rf config/i3/* ~/.config/i3/
 cp -rf config/i3blocks/* ~/.config/i3blocks/
 cp -rf config/kitty/* ~/.config/kitty/
@@ -58,7 +58,7 @@ cp -rf config/eww/* ~/.config/eww/
 # ----------------------------------------
 # XRESOURCES SETUP
 # ----------------------------------------
-echo "==> Setting up .Xresources autoload..."
+echo "==========> Setting up .Xresources autoload..."
 if ! grep -Fxq "xrdb -merge ~/.Xresources" ~/.xinitrc 2>/dev/null; then
   echo "xrdb -merge ~/.Xresources" >> ~/.xinitrc
   echo "Added xrdb loading to .xinitrc"
@@ -69,7 +69,7 @@ fi
 # ----------------------------------------
 # WALLPAPERS
 # ----------------------------------------
-echo "==> Downloading wallpapers..."
+echo "==========> Downloading wallpapers..."
 mkdir -p ~/Pictures/
 cd ~/Pictures/
 if [ ! -d "wallpapers" ]; then
@@ -81,7 +81,7 @@ fi
 # ----------------------------------------
 # FONTS
 # ----------------------------------------
-echo "==> Installing Maple Mono NL font..."
+echo "==========> Installing Maple Mono NL font..."
 cd ~/Downloads/
 mkdir -p ~/.local/share/fonts
 curl -LO https://github.com/subframe7536/maple-font/releases/download/v7.3/MapleMonoNL-TTF.zip
@@ -89,4 +89,4 @@ unzip -o MapleMonoNL-TTF.zip -d MapleMonoNL-TTF
 cp MapleMonoNL-TTF/*.ttf ~/.local/share/fonts/
 fc-cache -fv
 
-echo "✅ Installation complete. You may want to reboot now!"
+echo "==========> Installation complete. You may want to reboot now!"
