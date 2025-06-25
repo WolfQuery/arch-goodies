@@ -48,6 +48,7 @@ echo "==========> Creating configuration directories..."
 mkdir -p ~/.config/{i3,kitty,rofi,picom,i3blocks}
 
 echo "==========> Copying config files..."
+cd ~/my-i3-dots-Arch/
 cp -rf config/i3/* ~/.config/i3/
 cp -rf config/i3blocks/* ~/.config/i3blocks/
 cp -rf config/kitty/* ~/.config/kitty/
