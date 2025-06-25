@@ -45,7 +45,7 @@ sudo localectl set-x11-keymap cz qwertz
 # CONFIG FILES
 # ----------------------------------------
 echo "==========> Creating configuration directories..."
-mkdir -p ~/.config/{i3,kitty,rofi,picom,i3blocks,eww}
+mkdir -p ~/.config/{i3,kitty,rofi,picom,i3blocks}
 
 echo "==========> Copying config files..."
 cp -rf config/i3/* ~/.config/i3/
@@ -53,7 +53,6 @@ cp -rf config/i3blocks/* ~/.config/i3blocks/
 cp -rf config/kitty/* ~/.config/kitty/
 cp -rf config/picom/* ~/.config/picom/
 cp -rf config/rofi/* ~/.config/rofi/
-cp -rf config/eww/* ~/.config/eww/
 
 # ----------------------------------------
 # XRESOURCES SETUP
