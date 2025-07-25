@@ -28,4 +28,3 @@ color=#ABE2FB
 command=free -h | awk '/^Mem:/ {print $3 "/" $2}'
 interval=10
 color=#FFC9E3
-
