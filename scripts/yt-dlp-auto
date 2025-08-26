@@ -29,6 +29,7 @@ mkdir -p "$OUT_DIR"
 # yt-dlp command
 yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/best" \
     --extract-audio --audio-format mp3 --audio-quality 0 \
+    --extractor-args "youtube:player_client=android" \
     --embed-thumbnail --add-metadata \
     --ignore-errors \
     --fragment-retries 10 --retries 10 \
