@@ -27,7 +27,7 @@ fi
 mkdir -p "$OUT_DIR"
 
 # yt-dlp command
-yt-dlp -f "bestaudio[ext=m4a]/bestaudio/best" \
+yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/best" \
     --extract-audio --audio-format mp3 --audio-quality 0 \
     --embed-thumbnail --add-metadata \
     --ignore-errors \
