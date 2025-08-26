@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# ytmusic.sh - Download YouTube audio to ~/Music/<Artist>/<Album> or ~/Music/<Artist> (singles)
-# Usage: ./ytmusic.sh URL "Artist Name" "Album Name (optional)"
+# yt-dlp-auto.sh - Download YouTube audio to ~/Music/<Artist>/<Album> or ~/Music/<Artist> (singles)
+# Usage: yt-dlp-auto URL "Artist Name" "Album Name (optional)"
 
 # Check arguments
 if [ -z "$1" ] || [ -z "$2" ]; then
@@ -27,11 +27,10 @@ fi
 mkdir -p "$OUT_DIR"
 
 # yt-dlp command
-yt-dlp -f bestaudio \
-    --extract-audio \
-    --audio-format mp3 \
-    --audio-quality 0 \
-    --embed-thumbnail \
-    --add-metadata \
+yt-dlp -f "bestaudio[ext=m4a]/bestaudio/best" \
+    --extract-audio --audio-format mp3 --audio-quality 0 \
+    --embed-thumbnail --add-metadata \
+    --ignore-errors \
+    --fragment-retries 10 --retries 10 \
     -o "$OUT_DIR/%(title)s.%(ext)s" \
     "$URL"
