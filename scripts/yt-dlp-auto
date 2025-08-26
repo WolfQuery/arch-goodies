@@ -30,9 +30,10 @@ mkdir -p "$OUT_DIR"
 yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/best" \
     --extract-audio --audio-format mp3 --audio-quality 0 \
     --extractor-args "youtube:player_client=android" \
-    --cookies-from-browser \
+    --cookies-from-browser firefox \
     --embed-thumbnail --add-metadata \
     --ignore-errors \
+    --restrict-filenames \
     --fragment-retries 10 --retries 10 \
     -o "$OUT_DIR/%(title)s.%(ext)s" \
     "$URL"
