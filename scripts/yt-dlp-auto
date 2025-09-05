@@ -31,9 +31,13 @@ yt-dlp -f "bestaudio[ext=m4a]/bestaudio[ext=webm]/best" \
     --extract-audio --audio-format mp3 --audio-quality 0 \
     --extractor-args "youtube:player_client=android" \
     --cookies-from-browser firefox \
-    --embed-thumbnail --add-metadata \
+    --embed-thumbnail \
     --ignore-errors \
     --restrict-filenames \
     --fragment-retries 10 --retries 10 \
     -o "$OUT_DIR/%(title)s.%(ext)s" \
+    --exec "ffmpeg -y -i {} \
+        -metadata artist='$ARTIST' \
+        $( [ -n \"$ALBUM\" ] && echo -metadata album=\"$ALBUM\" ) \
+        -codec copy {}" \
     "$URL"
